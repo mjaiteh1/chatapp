@@ -3,7 +3,8 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-interface Message { 
+
+interface Message {
     message: string;
 
 
