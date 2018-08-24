@@ -2,18 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { HttpModule } from '@angular/http';
-
-export const firebaseConfig = {
-    apiKey: "AIzaSyBUcXEJRBZP7uLGBvla959v0wejvpRBY4c",
-    authDomain: "chatapp-c8a29.firebaseapp.com",
-    databaseURL: "https://chatapp-c8a29.firebaseio.com",
-    projectId: "chatapp-c8a29",
-    storageBucket: "chatapp-c8a29.appspot.com",
-    messagingSenderId: "812579762937"
-};
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import {AngularFireModule} from 'angularfire2';
+export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
@@ -23,8 +16,8 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
