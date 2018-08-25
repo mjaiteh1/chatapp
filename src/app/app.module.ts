@@ -16,7 +16,7 @@ export const firebaseConfig = environment.firebaseConfig;
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(), //set up offline data
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],

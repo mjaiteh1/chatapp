@@ -25,11 +25,16 @@
                     </div>
 
                     <div class="medium-3 columns">
-                      <button>delete </button> 
+                      <button>delete </button>
                       <button>edit </button>
                     </div>
                 </div>
             </div>
+
+          <h2> {{message | async | json }}</h2>
+
+          <input [(ngModel)]="newContent">
+          <button (click)="updateContent()"> Update</button>
         </div>
     </div>
 </div>
