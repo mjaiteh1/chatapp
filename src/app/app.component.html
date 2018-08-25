@@ -2,8 +2,8 @@
     <div class="row">
 
         <div class="iface">
-            <input type="text" id="message" placeholder="Your chat message here..." #msg ngModel>
-            <input type="submit" class="submit" value="Send now" (click)="send(message.value)">
+            <input type="text" id="message" placeholder="Your chat message here..." [(ngModel)]= "newContent">
+            <input type="submit" class="submit" value="Send now" (click)="updateContent()">
 
             <div class="details-container">
                 <div class="row">
