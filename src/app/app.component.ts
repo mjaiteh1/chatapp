@@ -36,18 +36,22 @@ export class AppComponent {
       //return ref.orderBy('order', 'desc').limit(2)
     //});
 
-    //this.messageCollections = this.afs.collection("messages")
-    //this.messages= this.messageCollections.valueChanges(); //Observable
+    this.messageCollections = this.afs.collection("messages")
+    this.messages= this.messageCollections.valueChanges(); //Observable
     //this.snapshot = this.messageCollections.snapshotChanges()
 
     //Retrieve a specific document
-    this.messageDoc = this.afs.doc("messages/TAYLAIhTnc2cfJ6sLBym");
-    this.message = this.messageDoc.valueChanges();
+    //this.messageDoc = this.afs.doc("messages/TAYLAIhTnc2cfJ6sLBym");
+//    this.message = this.messageDoc.valueChanges();
 
   }
 
   updateContent() {
-    this.messageDoc.update({message: this.newContent} )
+    this.messageCollections.add({ message: this.newContent});
+    this.newContent = "";
+    //Set the collection and add new documents to that messageCollections
+    //once done, do an ngFor to Retrieve that data
+
   }
 
 }

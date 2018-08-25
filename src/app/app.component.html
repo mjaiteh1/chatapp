@@ -5,10 +5,12 @@
             <input type="text" id="message" placeholder="Your chat message here..." [(ngModel)]= "newContent">
             <input type="submit" class="submit" value="Send now" (click)="updateContent()">
 
+          <div *ngFor="let msg of messages | async">
             <div class="details-container">
                 <div class="row">
                     <div class="medium-9 columns">
-                      <p> This is a chat message </p>
+
+                    <p>  {{msg.message}} </p>
                     </div>
 
                     <div class="medium-3 columns">
@@ -18,23 +20,9 @@
                 </div>
             </div>
 
-            <div class="details-container">
-                <div class="row">
-                    <div class="medium-9 columns">
-                      <input type="text" value="">
-                    </div>
+          </div>
 
-                    <div class="medium-3 columns">
-                      <button>delete </button>
-                      <button>edit </button>
-                    </div>
-                </div>
-            </div>
 
-          <h2> {{message | async | json }}</h2>
-
-          <input [(ngModel)]="newContent">
-          <button (click)="updateContent()"> Update</button>
         </div>
     </div>
 </div>
